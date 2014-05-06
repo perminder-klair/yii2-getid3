@@ -2,7 +2,7 @@
 
 namespace kato\getid3;
 
-class AutoloadExample extends \yii\base\Widget
+class GetID3 extends \yii\base\object
 {
     public function run()
     {

@@ -10,6 +10,9 @@
             "email": "perminder.klair@gmail.com"
         }
     ],
+    "require": {
+        "james-heinrich/getid3": "dev-master"
+    },
     "autoload": {
         "psr-4": {
             "kato\\getid3\\": ""
