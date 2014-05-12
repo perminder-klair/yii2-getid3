@@ -28,4 +28,5 @@ Usage
 Once the extension is installed, simply use it in your code by  :
 
 ```php
-<?= \kato\getid3\AutoloadExample::widget(); ?>```
+$getID3 = new Yii2GetID3();
+$getID3->getData('./path/file.mp3');```
