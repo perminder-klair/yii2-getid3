@@ -3,7 +3,6 @@
 namespace kato\getid3;
 
 use GetId3\GetId3Core as GetId3;
-use yii\web\NotFoundHttpException;
 
 class Yii2GetID3 extends \yii\base\object
 {
@@ -21,7 +20,8 @@ class Yii2GetID3 extends \yii\base\object
             ->analyze($filename);
 
         if (isset($audio['error'])) {
-            throw new NotFoundHttpException(sprintf('Error at reading audio properties from "%s" with GetId3: %s.', $filename, $audio['error']));
+            $error = is_array($audio['error']) ? implode(';', $audio['error']) : $audio['error'];
+            throw new \InvalidArgumentException(sprintf('Error at reading audio properties from "%s" with GetId3: %s.', $filename, $error));
         }
 
         return $audio;
